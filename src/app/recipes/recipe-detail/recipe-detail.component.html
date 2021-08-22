@@ -1,12 +1,13 @@
 <div class="row">
     <div class="col-xs-12">
-        <img src="https://static01.nyt.com/images/2021/03/28/dining/mc-shakshuka/mc-shakshuka-articleLarge.jpg"
-            alt="image goes here" class="img-responsive">
+        <img src={{recipe.imagePath}}
+            alt={{recipe.name}} class="img-responsive"
+            style="max-height: 300px;">
     </div>
 </div>
 <div class="row">
     <div class="col-xs-12">
-        <h1>Recipe Name</h1>
+        <h1>{{recipe.name}}</h1>
     </div>
 </div>
 <div class="row">
@@ -31,7 +32,7 @@
 </div>
 <div class="row">
     <div class="col-xs-12">
-        Description goes here...
+        {{recipe.description}}
     </div>
 </div>
 

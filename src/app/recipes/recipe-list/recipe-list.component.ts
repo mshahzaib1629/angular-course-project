@@ -1,5 +1,6 @@
+import { EventEmitter } from '@angular/core';
 import { Recipe } from '../recipe.model';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-recipe-list',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recipe-list.component.css']
 })
 export class RecipeListComponent implements OnInit {
-
+  
+  // we can't listen to an event in grandchildren component, e.g. recipes.component will not be able to 
+  // handle eventEmitter fired from recipe-item.component which is: 
+  // recipes.component > recipes-list.component > recipe-item.component
+  // therefore, we have to add a handler here in the middle of the grandparent & grandchild component. 
+  // For that case, we added a function below with name onRecpieSelected
+  @Output() recipeWasSelected = new EventEmitter<Recipe>();
   constructor() { }
   
   // here Recipe[] is for defining datatype. i.e. List of Recipes
@@ -18,5 +25,9 @@ export class RecipeListComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+onRecipeSelected (recipe: Recipe) {
+  this.recipeWasSelected.emit(recipe);
+}  
 
 }
