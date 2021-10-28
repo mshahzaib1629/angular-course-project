@@ -1,0 +1,13 @@
+How I updated an old Angular Project:
+
+run commands:
+--------------------------------
+ng update @angular/core --force
+ng update --force
+npm install --legacy-peer-deps
+npm audit fix --force
+
+ng serve 
+--------------------------------
+enjoy!
+
