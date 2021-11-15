@@ -1,8 +1,8 @@
 import { RecipeService } from './../../../services/recipe.service';
 import { EventEmitter } from '@angular/core';
-import { Recipe } from './../../recipe.model';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Recipe } from 'src/app/models/recipe.model';
 
 @Component({
   selector: 'app-recipe-item',

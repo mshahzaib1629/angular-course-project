@@ -3,8 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { RecipeService } from './../../services/recipe.service';
 import { EventEmitter, OnDestroy } from '@angular/core';
-import { Recipe } from '../recipe.model';
 import { Component, OnInit, Output } from '@angular/core';
+import { Recipe } from 'src/app/models/recipe.model';
 
 @Component({
   selector: 'app-recipe-list',
