@@ -2,6 +2,7 @@ import { Router } from '@angular/router';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { EmailValidator } from '@angular/forms';
+import { environment } from 'src/environments/environment';
 import { throwError, Subject, BehaviorSubject } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { User } from '../models/user.model';
@@ -30,7 +31,7 @@ export class AuthService {
     return (
       this.http
         .post<AuthResponseData>(
-          'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAf5GBPF9rgV8BowB5kFubyfZn_KnL7JZM',
+          'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=' + environment.firebaseAPIKey,
           {
             email: email,
             password: password,
@@ -58,7 +59,7 @@ export class AuthService {
   login(email: string, password: string) {
     return this.http
       .post<AuthResponseData>(
-        'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAf5GBPF9rgV8BowB5kFubyfZn_KnL7JZM',
+        'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' + environment.firebaseAPIKey,
         {
           email: email,
           password: password,
