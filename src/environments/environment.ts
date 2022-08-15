@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  firebaseAPIKey: 'AIzaSyAf5GBPF9rgV8BowB5kFubyfZn_KnL7JZM'
+  firebaseAPIKey: 'AIzaSyARm0xK7H5dbNcqKTbJFUeFMR9s4fyI75k',
+  serverUrl: 'https://max-angular-crash-default-rtdb.asia-southeast1.firebasedatabase.app/'
 };
 
 /*
